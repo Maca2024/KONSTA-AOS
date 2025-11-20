@@ -14,7 +14,7 @@ export const Workshops: React.FC = () => {
         location: 'Ladakh, Himalayas',
         date: 'Feb 10 - 24, 2026',
         price: 14500,
-        image: 'https://images.unsplash.com/photo-1552466980-d6b5e999942a?q=80&w=1600&auto=format&fit=crop',
+        image: 'https://images.unsplash.com/photo-1552168324-d612d77725e3?q=80&w=1600&auto=format&fit=crop',
         spots: 3,
         tier: 'EXPEDITION'
     },

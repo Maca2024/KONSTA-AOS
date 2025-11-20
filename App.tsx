@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Dashboard } from './components/Dashboard';
 import { Workshops } from './components/Workshops';
@@ -9,8 +8,9 @@ import { Gallery } from './components/Gallery';
 import { YouTube } from './components/YouTube';
 import { Socials } from './components/Socials';
 import { Landing } from './components/Landing';
+import { Taigaschool } from './components/Taigaschool';
 import { ViewState } from './types';
-import { LayoutGrid, Compass, Cpu, Calendar, Users, Image, Youtube, Share2, Menu, X, Circle } from 'lucide-react';
+import { LayoutGrid, Compass, Cpu, Calendar, Users, Image, Youtube, Share2, Menu, X, Circle, Trees } from 'lucide-react';
 
 const App: React.FC = () => {
   const [currentView, setCurrentView] = useState<ViewState>(ViewState.DASHBOARD);
@@ -21,10 +21,11 @@ const App: React.FC = () => {
     switch (currentView) {
       case ViewState.DASHBOARD: return <Dashboard onNavigate={setCurrentView} />;
       case ViewState.WORKSHOPS: return <Workshops />;
+      case ViewState.TAIGASCHOOL: return <Taigaschool />;
       case ViewState.AI_STUDIO: return <AIStudio />;
       case ViewState.EVENTS: return <Events />;
       case ViewState.COMMUNITY: return <Community />;
-      case ViewState.GALLERY: return <Gallery />;
+      case ViewState.GALLERY: return <Gallery onNavigate={setCurrentView} />;
       case ViewState.YOUTUBE: return <YouTube />;
       case ViewState.SOCIALS: return <Socials />;
       default: return <Dashboard onNavigate={setCurrentView} />;
@@ -71,6 +72,7 @@ const App: React.FC = () => {
               <div className="px-6 mb-2 mt-2 text-[10px] font-mono text-gray-700 uppercase tracking-widest">Platform</div>
               <NavItem view={ViewState.DASHBOARD} icon={LayoutGrid} label="Overview" />
               <NavItem view={ViewState.WORKSHOPS} icon={Compass} label="Expeditions" />
+              <NavItem view={ViewState.TAIGASCHOOL} icon={Trees} label="Taiga School" />
               <NavItem view={ViewState.EVENTS} icon={Calendar} label="Calendar" />
               <NavItem view={ViewState.AI_STUDIO} icon={Cpu} label="Intelligence" />
               
@@ -85,7 +87,7 @@ const App: React.FC = () => {
               <div className="flex items-center">
                   <div className="w-10 h-10 overflow-hidden rounded-full mr-4 border border-white/10 ring-2 ring-transparent hover:ring-luxury-gold transition-all cursor-pointer">
                       {/* Konsta Portrait */}
-                      <img src="https://images.unsplash.com/photo-1596387430964-86675d49494b?q=80&w=200&auto=format&fit=crop" alt="Profile" className="w-full h-full object-cover grayscale" />
+                      <img src="https://images.unsplash.com/photo-1552168324-d612d77725e3?q=80&w=200&auto=format&fit=crop" alt="Profile" className="w-full h-full object-cover grayscale" />
                   </div>
                   <div className="flex flex-col">
                       <span className="text-sm text-white font-serif">Konsta Punkka</span>
