@@ -34,7 +34,7 @@ export const Taigaschool: React.FC = () => {
                  </p>
                  
                  <a 
-                    href="http://taigaschool.com" 
+                    href="https://www.taigaschool.com" 
                     target="_blank" 
                     rel="noreferrer" 
                     className="group relative inline-flex items-center px-12 py-5 bg-blue-50/10 border border-blue-100/30 backdrop-blur-md text-blue-50 font-mono text-xs font-bold tracking-widest hover:bg-white hover:text-arctic-950 transition-all duration-500 shadow-[0_0_30px_rgba(239,246,255,0.1)]"
@@ -290,7 +290,7 @@ export const Taigaschool: React.FC = () => {
                 
                 <div className="flex flex-col md:flex-row justify-center gap-6">
                     <a 
-                        href="http://taigaschool.com" 
+                        href="https://www.taigaschool.com" 
                         target="_blank" 
                         rel="noreferrer" 
                         className="px-12 py-5 bg-luxury-gold text-black font-mono text-sm font-bold tracking-widest hover:bg-white transition-colors shadow-[0_0_40px_rgba(212,197,166,0.3)]"
