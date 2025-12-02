@@ -118,21 +118,23 @@ export const Dashboard: React.FC<DashboardProps> = ({ onNavigate }) => {
             Node Status
           </h2>
           
-          <div className="glass-panel p-6 relative overflow-hidden group cursor-pointer">
-             <div className="absolute inset-0 opacity-40 group-hover:opacity-50 transition-opacity">
-                {/* Signature Red Squirrel Close-up */}
-                <img src={IMAGES.WILDLIFE.SQUIRREL} className="w-full h-full object-cover grayscale" alt="Squirrel Status" />
+          <div className="glass-panel p-6 relative overflow-hidden group cursor-pointer border border-white/10">
+             <div className="absolute inset-0 transition-opacity">
+                {/* Updated to Frozen Face as per attachment request - Removed opacity to make it clear */}
+                <img src={IMAGES.KONSTA.FROZEN_FACE} className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-700" alt="Node Status" />
              </div>
-             <div className="relative z-10">
+             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+             
+             <div className="relative z-10 pt-48">
                 <div className="flex items-center justify-between mb-6">
                     <div className="flex items-center space-x-2">
-                        <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
-                        <span className="text-sm font-mono text-white drop-shadow-md">FINLAND HQ</span>
+                        <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse shadow-[0_0_10px_#22c55e]"></span>
+                        <span className="text-sm font-mono text-white drop-shadow-md tracking-widest">FINLAND HQ</span>
                     </div>
-                    <span className="text-xs text-gray-200 drop-shadow-md">65.01° N</span>
+                    <span className="text-xs text-gray-200 drop-shadow-md font-mono">65.01° N</span>
                 </div>
                 <div className="space-y-3">
-                    <div className="flex justify-between text-xs font-mono text-gray-300">
+                    <div className="flex justify-between text-xs font-mono text-gray-300 border-b border-white/10 pb-2">
                         <span className="drop-shadow-sm">TEMP</span>
                         <span className="text-white drop-shadow-sm">-12°C</span>
                     </div>

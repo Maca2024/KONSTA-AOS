@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Dashboard } from './components/Dashboard';
 import { Workshops } from './components/Workshops';
@@ -10,6 +9,7 @@ import { YouTube } from './components/YouTube';
 import { Socials } from './components/Socials';
 import { Landing } from './components/Landing';
 import { Taigaschool } from './components/Taigaschool';
+import { Settings } from './pages/Settings';
 import { ViewState } from './types';
 import { IMAGES } from './assets';
 import { LayoutGrid, Compass, Cpu, Calendar, Users, Image, Youtube, Share2, Menu, X, Circle, Trees } from 'lucide-react';
@@ -30,6 +30,7 @@ const App: React.FC = () => {
       case ViewState.GALLERY: return <Gallery onNavigate={setCurrentView} />;
       case ViewState.YOUTUBE: return <YouTube />;
       case ViewState.SOCIALS: return <Socials />;
+      case ViewState.PROFILE: return <Settings />;
       default: return <Dashboard onNavigate={setCurrentView} />;
     }
   };
@@ -86,13 +87,16 @@ const App: React.FC = () => {
           </nav>
 
           <div className="p-6 border-t border-white/5 bg-black/20">
-              <div className="flex items-center">
-                  <div className="w-10 h-10 overflow-hidden rounded-full mr-4 border border-white/10 ring-2 ring-transparent hover:ring-luxury-gold transition-all cursor-pointer">
+              <div 
+                  className="flex items-center cursor-pointer group hover:bg-white/5 -m-2 p-2 rounded transition-all"
+                  onClick={() => setCurrentView(ViewState.PROFILE)}
+              >
+                  <div className="w-10 h-10 overflow-hidden rounded-full mr-4 border border-white/10 ring-2 ring-transparent group-hover:ring-luxury-gold transition-all">
                       {/* Authentic Photographer Portrait (User Pick 4: Red Hair) */}
                       <img src={IMAGES.KONSTA.PORTRAIT_STUDIO} alt="Profile" className="w-full h-full object-cover" />
                   </div>
                   <div className="flex flex-col">
-                      <span className="text-sm text-white font-serif">Konsta Punkka</span>
+                      <span className="text-sm text-white font-serif group-hover:text-luxury-gold transition-colors">Konsta Punkka</span>
                       <div className="flex items-center mt-1">
                           <Circle className="w-2 h-2 fill-green-900 text-green-500 mr-2" />
                           <span className="text-[10px] font-mono text-gray-500">ONLINE</span>
