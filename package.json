@@ -10,7 +10,7 @@
     "vercel-build": "vite build"
   },
   "engines": {
-    "node": "18.x"
+    "node": ">=18.0.0"
   },
   "dependencies": {
     "react": "^19.2.0",
