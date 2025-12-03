@@ -9,7 +9,13 @@ const getClient = async (): Promise<GoogleGenAI> => {
   if (window.aistudio) {
      // For demo purposes in this environment, we rely on the injected key or user selection
   }
-  return new GoogleGenAI({ apiKey: process.env.API_KEY || '' });
+  
+  const apiKey = process.env.API_KEY || process.env.GEMINI_API_KEY || '';
+  if (!apiKey && !window.aistudio) {
+    console.warn('Gemini API key not found. AI features will not work. Please set VITE_GEMINI_API_KEY or GEMINI_API_KEY environment variable.');
+  }
+  
+  return new GoogleGenAI({ apiKey });
 };
 
 // --- TEXT & SEARCH GROUNDING ---
